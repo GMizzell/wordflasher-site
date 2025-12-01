@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ACT Reading &amp; Math Trainer – Neuron Learning Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ACT Reading & Math Trainer by Neuron Learning Labs offers focused practice on ACT-style passages, questions, and timing.">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid #1f2937;
+      background: rgba(15,23,42,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+    nav a:hover { color: #e5e7eb; }
+    main {
+      max-width: 800px;
+      margin: 2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+    .tagline {
+      color: #9ca3af;
+      margin-bottom: 1.2rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+    }
+    li { margin-bottom: 0.25rem; }
+    .panel {
+      background: #020617;
+      border-radius: 0.7rem;
+      border: 1px solid #1f2937;
+      padding: 0.9rem 1rem;
+      margin-top: 1rem;
+    }
+    .label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+      margin-bottom: 0.3rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem 2rem;
+      border-top: 1px solid #1f2937;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Neuron Learning Labs</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/christmas-word-search/">Christmas Word Search</a>
+      <a href="/reading-helper/">Reading Helper</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>ACT Reading &amp; Math Trainer</h1>
+    <p class="tagline">
+      A focused set of tools to help students practice ACT-style reading passages, timing, and math skills.
+    </p>
+
+    <h2>Planned features</h2>
+    <ul>
+      <li><strong>Reading passages</strong> modeled after ACT difficulty and length, with adjustable timing.</li>
+      <li><strong>Math practice</strong> on high-yield topics such as algebra, functions, and geometry.</li>
+      <li><strong>Short, repeatable sessions</strong> so students can build stamina and pacing over time.</li>
+      <li><strong>Clear feedback</strong> to highlight which question types and topics need more work.</li>
+      <li><strong>No ads and no accounts</strong> – a distraction-free environment focused purely on practice.</li>
+    </ul>
+
+    <p>
+      This app is under active development. The first release will focus on reading and math modules, with additional
+      English and science content planned for future versions.
+    </p>
+
+    <div class="panel">
+      <div class="label">Privacy &amp; Data</div>
+      <p>
+        The ACT Reading &amp; Math Trainer will follow the same privacy approach as our other apps: no student accounts,
+        no third-party advertising, and no sale of personal data. For full details, please see the
+        <a href="/privacy">Neuron Learning Labs Privacy Policy</a>.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="label">Support</div>
+      <p>
+        If you have questions about our ACT tools, or would like to request specific topics or passage types, please
+        visit the <a href="/support">support page</a> for contact information.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Neuron Learning Labs. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

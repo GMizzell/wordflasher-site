@@ -1,60 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Word Flasher • Flash cheers & messages</title>
-<style>
-:root{--bg:#0b0b0f;--txt:#f7f7fb;--muted:#a7a7b1;--accent:#ff3b30;}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55}
-a{color:#61dafb;text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:900px;margin:0 auto;padding:28px}
-.hero{padding:48px 28px;border-bottom:1px solid #1e1e28;background:linear-gradient(180deg,#12121a,#0b0b0f)}
-h1{font-size:42px;margin:0 0 12px 0}
-h2{font-size:28px;margin:28px 0 8px 0}
-p.lead{font-size:18px;color:var(--muted);margin-top:0}
-.card{background:#12121a;border:1px solid #1e1e28;border-radius:16px;padding:18px;margin:16px 0}
-.badge{display:inline-block;background:#1e1e28;color:#ddd;border-radius:999px;padding:4px 10px;font-size:12px;margin-right:8px}
-.button{display:inline-block;background:var(--accent);color:white;border-radius:12px;padding:12px 18px;font-weight:600}
-ul{margin:0;padding-left:18px}
-footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid #1e1e28;padding:18px 0}
-</style>
+  <meta charset="UTF-8" />
+  <title>Neuron Learning Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Neuron Learning Labs creates focused, brain-building apps for reading, math, and problem-solving.">
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #020819;
+      --panel: #020617;
+      --border: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.15);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 50%, #000 100%);
+      color: var(--text);
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(15,23,42,0.8));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      box-shadow: 0 0 18px rgba(56,189,248,0.5);
+      background: radial-gradient(circle at 30% 30%, #e0f2fe, #1e293b 55%, #020617 100%);
+      position: relative;
+    }
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      border: 1px solid rgba(56,189,248,0.7);
+      top: 20%;
+      left: 20%;
+    }
+    .brand-mark::after {
+      transform: rotate(40deg);
+      border-color: rgba(248,250,252,0.6);
+    }
+    .brand-name {
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    main {
+      max-width: 980px;
+      margin: 2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+    h1 {
+      font-size: 2.1rem;
+      margin: 0 0 0.5rem;
+    }
+    .tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      max-width: 36rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem 0.25rem 0.3rem;
+      border: 1px solid rgba(148,163,184,0.5);
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34,197,94,0.7);
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+    .btn-primary {
+      border-radius: 999px;
+      padding: 0.6rem 1.1rem;
+      border: none;
+      color: #0b1120;
+      background: linear-gradient(135deg,#38bdf8,#22c55e);
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 25px rgba(15,23,42,0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .btn-primary span.icon {
+      font-size: 1.1rem;
+    }
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.55rem 1.05rem;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--text);
+      background: rgba(15,23,42,0.7);
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .hero-meta {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .hero-visual {
+      border-radius: 1rem;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: radial-gradient(circle at 30% 10%, rgba(56,189,248,0.25), rgba(15,23,42,1));
+      padding: 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual-title {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .neuron-orbit {
+      position: relative;
+      width: 100%;
+      padding-top: 72%;
+    }
+    .neuron-node {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      box-shadow: 0 0 12px rgba(56,189,248,0.9);
+    }
+    .neuron-node.center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .neuron-node.a { top: 10%; left: 20%; }
+    .neuron-node.b { top: 18%; right: 10%; }
+    .neuron-node.c { bottom: 14%; left: 15%; }
+    .neuron-node.d { bottom: 8%; right: 18%; }
+    .neuron-link {
+      position: absolute;
+      border-radius: 999px;
+      background: linear-gradient(to right, rgba(56,189,248,0.2), rgba(56,189,248,0.7));
+      opacity: 0.7;
+    }
+    .apps-section {
+      margin-top: 2.5rem;
+    }
+    .apps-section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.3rem;
+    }
+    .apps-section p.lead {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+      margin-top: 0.7rem;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 0.9rem 1.1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56,189,248,0.2), transparent 55%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      font-size: 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .card p {
+      margin: 0.2rem 0 0.8rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .card-footer-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 1.4rem 1rem 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2rem;
+    }
+    footer a {
+      color: var(--muted);
+    }
+    footer a:hover {
+      color: var(--text);
+    }
+  </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="container">
-      <span class="badge">iPhone</span>
-      <h1>Word Flasher</h1>
-      <p class="lead">Turn your phone into a bold, full‑screen message board. Type two words, pick colors, set the speed, and press Start.</p>
-      <p><a class="button" href="#" title="App Store link (add later)">Get it on the App Store</a></p>
-      <p><a href="support.html">Support</a> • <a href="privacy.html">Privacy</a></p>
+  <header>
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">Neuron Learning Labs</div>
     </div>
-  </div>
-  <div class="container">
-    <div class="card">
-      <h2>What it does</h2>
-      <ul>
-        <li>Big, auto‑sized text that fills the screen</li>
-        <li>Per‑word color pickers (text & background)</li>
-        <li>Speed slider (0.25–5.00s)</li>
-        <li>Tap to pause/resume; one tap to close</li>
-        <li>No account. No ads. No data collected.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>How to use</h2>
-      <ol>
-        <li>Type two words (e.g., <em>GO</em> and <em>TEAM</em>).</li>
-        <li>Pick colors for text and background.</li>
-        <li>Adjust the speed, then tap <strong>Start</strong>.</li>
-      </ol>
-    </div>
-  </div>
-  <div class="container">
-    <footer>
-      © 2025 Word Flasher. • <a href="mailto:george@allpencilsdown.com">Contact</a>
-    </footer>
-  </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/christmas-word-search/">Christmas Word Search</a>
+      <a href="/reading-helper/">Reading Helper</a>
+      <a href="/act-reading-math/">ACT Reading &amp; Math</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Brain-building tools for students &amp; families
+        </div>
+        <h1>Apps that train attention, reading, and problem-solving.</h1>
+        <p class="tagline">
+          Neuron Learning Labs creates focused learning apps built from decades of real tutoring experience:
+          reading fluency, ACT test skills, and fun puzzles that exercise memory and pattern recognition.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn-primary" href="/christmas-word-search/">
+            <span class="icon">🎄</span>
+            <span>Try Christmas Word Search</span>
+          </a>
+          <a class="btn-secondary" href="/reading-helper/">
+            <span>Explore Reading Helper</span>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          No ads. No student accounts. Just focused practice you can trust.
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-title">Neuron Learning Labs · Concept sketch</div>
+        <div class="neuron-orbit">
+          <div class="neuron-node center"></div>
+          <div class="neuron-node a"></div>
+          <div class="neuron-node b"></div>
+          <div class="neuron-node c"></div>
+          <div class="neuron-node d"></div>
+
+          <!-- Simple "links" between nodes (just decorative bars) -->
+          <div class="neuron-link" style="top: 50%; left: 50%; width: 40%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(-12deg);"></div>
+          <div class="neuron-link" style="top: 50%; left: 50%; width: 36%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(22deg);"></div>
+          <div class="neuron-link" style="top: 50%; left: 50%; width: 42%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(150deg);"></div>
+          <div class="neuron-link" style="top: 50%; left: 50%; width: 40%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(195deg);"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="apps-section">
+      <h2>Current &amp; Upcoming Apps</h2>
+      <p class="lead">
+        Each app targets a specific skill set while keeping the experience simple, repeatable, and distraction-free.
+      </p>
+
+      <div class="apps-grid">
+        <article class="card">
+          <div class="card-tag">Now available</div>
+          <h3>Christmas Word Search</h3>
+          <p>
+            A 29×29 Christmas carol word search with both Classic and Challenge modes.
+            Tap letters to trace each song title; correct words stay highlighted so you can see your progress at a glance.
+          </p>
+          <a class="card-footer-link" href="/christmas-word-search/">
+            Learn more about Christmas Word Search →
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Now available</div>
+          <h3>WordFlasher Reading Helper</h3>
+          <p>
+            Timed reading passages with adjustable speeds and simple controls built to mirror ACT reading demands.
+            Designed from 25+ years of one-on-one tutoring to build fluency and confidence.
+          </p>
+          <a class="card-footer-link" href="/reading-helper/">
+            Learn more about Reading Helper →
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">In development</div>
+          <h3>ACT Reading &amp; Math Trainer</h3>
+          <p>
+            Focused practice on ACT reading passages, math skills, and timing. Short, repeatable sessions help students
+            master the pacing and question styles they’ll see on test day.
+          </p>
+          <a class="card-footer-link" href="/act-reading-math/">
+            Preview the ACT trainer plans →
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Neuron Learning Labs. All rights reserved.
+    &nbsp;|&nbsp; <a href="/privacy">Privacy Policy</a>
+    &nbsp;|&nbsp; <a href="/support">Support</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -168,19 +168,20 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
-<div class="hero-visual">
-  <div class="hero-visual-title">Neuron Learning Labs</div>
-  <img
-    src="/NeuronLearningLabs.png"
-    alt="Glowing neuron illustration representing Neuron Learning Labs"
-    style="width: 100%; height: auto; border-radius: 0.75rem; display: block;"
-  />
-</div>
+    .hero-visual {
+      border-radius: 1rem;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: radial-gradient(circle at 30% 10%, rgba(56,189,248,0.25), rgba(15,23,42,1));
+      padding: 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
     .hero-visual-title {
       font-size: 0.85rem;
       color: var(--muted);
       margin-bottom: 0.35rem;
     }
+
     .neuron-orbit {
       position: relative;
       width: 100%;
@@ -301,15 +302,14 @@
   <main>
     <section class="hero">
       <div>
-        <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          Brain-building tools for students &amp; families
-        </div>
-        <h1>Apps that train attention, reading, and problem-solving.</h1>
-        <p class="tagline">
-          Neuron Learning Labs creates focused learning apps built from decades of real tutoring experience:
-          reading fluency, ACT test skills, and fun puzzles that exercise memory and pattern recognition.
-        </p>
+      <div class="hero-visual">
+        <div class="hero-visual-title">Neuron Learning Labs</div>
+        <img
+          src="/NeuronLearningLabs.png"
+          alt="Glowing neuron illustration representing Neuron Learning Labs"
+          style="width: 100%; height: auto; border-radius: 0.75rem; display: block;"
+        />
+      </div>
 
         <div class="hero-cta">
           <a class="btn-primary" href="/christmas-word-search/">

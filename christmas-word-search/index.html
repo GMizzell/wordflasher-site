@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Christmas Word Search – Neuron Learning Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Christmas Word Search is a festive 29×29 word search puzzle featuring classic Christmas carols in Classic and Challenge modes.">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid #1f2937;
+      background: rgba(15,23,42,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+    nav a:hover { color: #e5e7eb; }
+    main {
+      max-width: 800px;
+      margin: 2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+    .tagline {
+      color: #9ca3af;
+      margin-bottom: 1.2rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+    }
+    li { margin-bottom: 0.25rem; }
+    .panel {
+      background: #020617;
+      border-radius: 0.7rem;
+      border: 1px solid #1f2937;
+      padding: 0.9rem 1rem;
+      margin-top: 1rem;
+    }
+    .label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+      margin-bottom: 0.3rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem 2rem;
+      border-top: 1px solid #1f2937;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Neuron Learning Labs</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/reading-helper/">Reading Helper</a>
+      <a href="/act-reading-math/">ACT Trainer</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Christmas Word Search</h1>
+    <p class="tagline">
+      A festive 29×29 word search puzzle built around classic Christmas carols, with both Classic and Challenge modes.
+    </p>
+
+    <h2>What the app does</h2>
+    <ul>
+      <li><strong>Large 29×29 puzzle grid</strong> packed with Christmas carol titles hidden in all directions.</li>
+      <li><strong>Classic mode</strong> – choose any song from the list, search at your own pace, and tap letters to trace the title in the grid.</li>
+      <li><strong>Challenge mode</strong> – work against a one-, two-, or three-minute timer for each song title. Miss it and it goes back into the clue pool.</li>
+      <li><strong>Tap-to-trace</strong> – when you find a song, tap each letter in order; correct paths stay lightly highlighted so you can see your progress.</li>
+      <li><strong>No ads, no accounts</strong> – the app does not require a login and does not include advertising.</li>
+    </ul>
+
+    <h2>Who it’s for</h2>
+    <p>
+      Christmas Word Search is designed for families, puzzle fans, and anyone who enjoys Christmas music and wants a cozy
+      brain exercise during the holiday season. It’s also a fun way to practice attention and pattern recognition.
+    </p>
+
+    <div class="panel">
+      <div class="label">Privacy &amp; Data</div>
+      <p>
+        Christmas Word Search does not collect personally identifiable information. The app does not require user
+        accounts or registrations. Any anonymized usage analytics are handled by Apple through standard App Store tools.
+        For full details, please see the <a href="/privacy">Neuron Learning Labs Privacy Policy</a>.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="label">Support</div>
+      <p>
+        If you have questions, encounter a problem, or would like to suggest new puzzle ideas, please visit our
+        <a href="/support">support page</a> for contact information.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Neuron Learning Labs. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,49 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Word Flasher • Support</title>
-<style>
-:root{--bg:#0b0b0f;--txt:#f7f7fb;--muted:#a7a7b1;--accent:#ff3b30;}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55}
-a{color:#61dafb;text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:900px;margin:0 auto;padding:28px}
-.hero{padding:48px 28px;border-bottom:1px solid #1e1e28;background:linear-gradient(180deg,#12121a,#0b0b0f)}
-h1{font-size:42px;margin:0 0 12px 0}
-h2{font-size:28px;margin:28px 0 8px 0}
-p.lead{font-size:18px;color:var(--muted);margin-top:0}
-.card{background:#12121a;border:1px solid #1e1e28;border-radius:16px;padding:18px;margin:16px 0}
-.badge{display:inline-block;background:#1e1e28;color:#ddd;border-radius:999px;padding:4px 10px;font-size:12px;margin-right:8px}
-.button{display:inline-block;background:var(--accent);color:white;border-radius:12px;padding:12px 18px;font-weight:600}
-ul{margin:0;padding-left:18px}
-footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid #1e1e28;padding:18px 0}
-</style>
+  <meta charset="UTF-8">
+  <title>Support – Neuron Learning Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Support for Neuron Learning Labs apps. Contact information and assistance.">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    header {
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid #1f2937;
+      background: rgba(15,23,42,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #9ca3af;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+    nav a:hover { color: #e5e7eb; }
+    main {
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    h2 { margin-top: 1.6rem; font-size: 1.2rem; }
+    .contact-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #1f2937;
+      border-radius: 0.7rem;
+      background: rgba(15,23,42,0.55);
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem 2rem;
+      border-top: 1px solid #1f2937;
+      color: #9ca3af;
+      margin-top: 3rem;
+    }
+    a { color: #38bdf8; }
+  </style>
 </head>
+
 <body>
-  <div class="hero">
-    <div class="container">
-      <h1>Word Flasher Support</h1>
-      <p class="lead">Quick help, FAQ, and contact.</p>
-      <p><a href="index.html">← Back to Home</a></p>
-    </div>
+<header>
+  <div>Neuron Learning Labs</div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Support</h1>
+  <p>
+    We're here to help with any of our apps, including:
+  </p>
+
+  <ul>
+    <li>Christmas Word Search</li>
+    <li>WordFlasher Reading Helper</li>
+    <li>ACT Reading &amp; Math Trainer (in development)</li>
+  </ul>
+
+  <h2>Contact Us</h2>
+  <div class="contact-box">
+    <p>
+      For questions, feedback, bug reports, or new feature suggestions, please email:
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:support@neuronlearninglabs.com">support@neuronlearninglabs.com</a>
+    </p>
   </div>
-  <div class="container">
-    <div class="card">
-      <h2>FAQ</h2>
-      <p><strong>How do I start?</strong><br/>Type two words, choose colors, set speed, then tap <em>Start</em>.</p>
-      <p><strong>How do I pause?</strong><br/>Tap anywhere while it’s flashing to pause/resume.</p>
-      <p><strong>Why is there no sound?</strong><br/>Word Flasher is a visual signboard—play music separately if you’d like.</p>
-      <p><strong>Does it collect data?</strong><br/>No. See our <a href="privacy.html">Privacy</a> page.</p>
-    </div>
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:george@allpencilsdown.com">george@allpencilsdown.com</a></p>
-    </div>
-  </div>
-  <div class="container">
-    <footer>© 2025 Word Flasher</footer>
-  </div>
+
+  <h2>Response Time</h2>
+  <p>
+    Most support requests receive a response within 24–48 hours.
+  </p>
+
+  <h2>Additional Help</h2>
+  <p>
+    For App Store billing questions (refunds, purchases, subscriptions), please contact Apple Support directly,
+    as developers do not have access to Apple ID billing records.
+  </p>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Neuron Learning Labs. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

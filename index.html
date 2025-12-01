@@ -181,35 +181,6 @@
       color: var(--muted);
       margin-bottom: 0.35rem;
     }
-
-    .neuron-orbit {
-      position: relative;
-      width: 100%;
-      padding-top: 72%;
-    }
-    .neuron-node {
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 999px;
-      background: #e0f2fe;
-      box-shadow: 0 0 12px rgba(56,189,248,0.9);
-    }
-    .neuron-node.center {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .neuron-node.a { top: 10%; left: 20%; }
-    .neuron-node.b { top: 18%; right: 10%; }
-    .neuron-node.c { bottom: 14%; left: 15%; }
-    .neuron-node.d { bottom: 8%; right: 18%; }
-    .neuron-link {
-      position: absolute;
-      border-radius: 999px;
-      background: linear-gradient(to right, rgba(56,189,248,0.2), rgba(56,189,248,0.7));
-      opacity: 0.7;
-    }
     .apps-section {
       margin-top: 2.5rem;
     }
@@ -301,15 +272,17 @@
 
   <main>
     <section class="hero">
+      <!-- LEFT COLUMN -->
       <div>
-      <div class="hero-visual">
-        <div class="hero-visual-title">Neuron Learning Labs</div>
-        <img
-          src="/NeuronLearningLabs.png"
-          alt="Glowing neuron illustration representing Neuron Learning Labs"
-          style="width: 100%; height: auto; border-radius: 0.75rem; display: block;"
-        />
-      </div>
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Brain-building tools for students &amp; families
+        </div>
+        <h1>Apps that train attention, reading, and problem-solving.</h1>
+        <p class="tagline">
+          Neuron Learning Labs creates focused learning apps built from decades of real tutoring experience:
+          reading fluency, ACT test skills, and fun puzzles that exercise memory and pattern recognition.
+        </p>
 
         <div class="hero-cta">
           <a class="btn-primary" href="/christmas-word-search/">
@@ -326,21 +299,14 @@
         </div>
       </div>
 
+      <!-- RIGHT COLUMN: your image -->
       <div class="hero-visual">
-        <div class="hero-visual-title">Neuron Learning Labs · Concept sketch</div>
-        <div class="neuron-orbit">
-          <div class="neuron-node center"></div>
-          <div class="neuron-node a"></div>
-          <div class="neuron-node b"></div>
-          <div class="neuron-node c"></div>
-          <div class="neuron-node d"></div>
-
-          <!-- Simple "links" between nodes (just decorative bars) -->
-          <div class="neuron-link" style="top: 50%; left: 50%; width: 40%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(-12deg);"></div>
-          <div class="neuron-link" style="top: 50%; left: 50%; width: 36%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(22deg);"></div>
-          <div class="neuron-link" style="top: 50%; left: 50%; width: 42%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(150deg);"></div>
-          <div class="neuron-link" style="top: 50%; left: 50%; width: 40%; height: 2px; transform-origin: left center; transform: translate(-5%, -50%) rotate(195deg);"></div>
-        </div>
+        <div class="hero-visual-title">Neuron Learning Labs</div>
+        <img
+          src="NeuronLearningLabs.png"
+          alt="Glowing neuron illustration representing Neuron Learning Labs"
+          style="width: 100%; height: auto; border-radius: 0.75rem; display: block;"
+        />
       </div>
     </section>
 
